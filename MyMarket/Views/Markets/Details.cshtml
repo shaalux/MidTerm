@@ -1,0 +1,58 @@
+﻿@model MyMarket.Models.Market
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Market</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Food.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Food.BrandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodRefFoodFoodTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodRefFoodFoodTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTimeSold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTimeSold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransactionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

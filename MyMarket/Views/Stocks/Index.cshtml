@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MyMarket.Models.Stock>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Stocks</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Food.BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodRefFoodFoodTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricePerUnit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Food.BrandName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodRefFoodFoodTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricePerUnit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model MyMarket.Models.Food
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RefFood.FoodTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefFood.FoodTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RefFoodFoodTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefFoodFoodTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

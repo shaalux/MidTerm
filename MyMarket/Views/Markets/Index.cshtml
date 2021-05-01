@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MyMarket.Models.Market>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Market</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Food.BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodRefFoodFoodTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeSold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Food.BrandName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodRefFoodFoodTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeSold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TransactionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TransactionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransactionId })
+        </td>
+    </tr>
+}
+
+</table>
